@@ -1,0 +1,56 @@
+/* pages/main/main.wxss */
+.head {
+  /* margin-top: 20rpx; */
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content:space-between;
+  flex-direction: column;
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.container {
+  margin-top: 100rpx;
+}
+
+.menu {
+display:flex;
+flex-wrap: wrap;
+flex-direction:row;
+}
+
+.border {
+  height: 300rpx;
+  width: 200rpx;
+  margin-left: 37rpx;
+  margin-bottom: 20rpx;
+  /* background-color: pink; */
+  border: 1rpx solid black;
+  border-radius: 8rpx;
+  box-shadow:0 6rpx 10rpx 2rpx #808080;
+}
+.menuDisplay {
+  height: 220rpx;
+  width: 170rpx;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+}
+
+.vegName {
+  /* border: 1rpx solid green; */
+  text-align: center;
+  font-size: small;
+}
+.buttonContainer{
+ margin-top: 50rpx;
+}
+.buttonContainer1{
+  margin-top: 30rpx;
+  margin-bottom: 100rpx;
+}
+button {
+  color:#fff;
+  background-color:#1E90FF;
+  width: 500rpx;  
+}      

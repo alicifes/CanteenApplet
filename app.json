@@ -1,0 +1,46 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/indexUser/user",
+    "pages/logs/logs",
+    "pages/main/main",
+    "pages/main/mainRice",
+    "pages/main/mainVeg",
+    "pages/main/test",
+    "pages/test/logs"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "iconPath": "pages/image/shitang.png",
+        "selectedIconPath": "pages/image/shitangSelect.png",
+        "text": "全部菜品"
+      },
+      {
+        "pagePath": "pages/main/mainRice",
+        "iconPath": "pages/image/rou.png",
+        "selectedIconPath": "pages/image/rouSelect.png",
+        "text": "荤菜"
+      }, {
+        "pagePath": "pages/main/mainVeg",
+        "iconPath": "pages/image/shucai.png",
+        "selectedIconPath": "pages/image/shucaiSelect.png",
+        "text": "素菜"
+      }
+    ]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "纬湃汽车食堂就餐系统",
+    "navigationBarTextStyle":"black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index"
+  }
+  }

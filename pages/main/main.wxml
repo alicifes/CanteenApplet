@@ -1,0 +1,34 @@
+<!--pages/main/main.wxml-->
+
+<view class="html">
+  <van-notice-bar scrollable="{{ true }}" text="欢迎来到纬湃汽车食堂,以下是今日的全部菜品,点击图像可查看菜品的大图" />
+    <view class="container">
+      <view class="menu">
+        <view wx:for="{{originalNumber}}"  data-index="{{index}}" wx:key="id">
+
+          <view class="border">
+           <view class="pic">
+             <image class="menuDisplay"  mode="scaleToFill" id="{{item.vegName}}" bindtap="showpic" src="{{item.picrout}}">
+             </image>
+              <van-dialog
+                  use-slot
+                  title="{{item.vegName}}"
+                  show="{{ item.show }}"
+                  show-cancel-button
+                  confirm-button-open-type="onClose"
+                  bind:close="onClose"
+                  bind:getuserinfo="getUserInfo"
+                >
+                <image src="{{item.picrout}}" />
+              </van-dialog>
+            </view>
+            <view class="vegName">{{item.vegName}}</view> 
+          </view>
+        </view>
+      </view>
+      <view class="buttonContainer1">
+        <van-button plain type="danger" bindtap="bindButtonTapMain">退出系统</van-button>
+        <van-dialog id="van-dialog" bind:confirm="nav"/>
+      </view>
+  </view>
+</view>

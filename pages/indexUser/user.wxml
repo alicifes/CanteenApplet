@@ -1,0 +1,34 @@
+<!--pages/indexUser/user.wxml-->
+<view>
+  <view class = "head"> 
+    纬湃汽车食堂人员管理系统
+  </view>
+<view class="container">
+  <!-- 获取用户头像部分 -->
+  <view class="mainPart">
+      <image bindtap="bindViewTap" class="avatar" src="{{avatarUrl}}" mode="cover"></image>   
+  </view>
+  <!-- 用户id部分 -->
+ <view class="userMessage">
+   <text class="nickname">欢迎{{nickName}}</text>
+ </view>
+ <!-- 剩余位置部分 -->
+  <view class="usermotto"> 
+    <text class="user-motto">剩余就餐位置{{motto}}</text><br/>
+  </view>
+<!-- 实时部分 -->
+  <view class="moreDetail">
+      <view class="detal" wx:for="{{originalNumber}}" wx:key="index">
+        <view>{{item.detailumber}}</view> 
+        <view>{{item.detailNumber}}</view> 
+    </view>
+</view>
+
+  <view class="userbuttonCollection">
+    <van-button plain  type="info" style="width:400rpx" bindtap="bindButtonTap" class="userbutton"> 点击进入点餐界面</van-button>
+  </view>
+  <view class="userbuttonCollectionDown">
+  <van-button plain  type="primary" style="width:400rpx" bindtap="bindButtonTapBack" class="userbutton"> 返回首页</van-button>
+</view>
+</view>
+</view>

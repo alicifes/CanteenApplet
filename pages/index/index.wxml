@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view>
+  <view class = "head"> 
+  纬湃汽车电子(天津)有限公司
+  </view>
+
+  <view class="bgc">
+    <image  class="bgcpic"  mode="scaleToFill"  src="/pages/image/bgc.jpg" ></image>
+  </view>
+
+  <view>
+    <image class="logo" mode="aspectFit" src="/pages/image/logo1.png" ></image>
+  </view>
+
+  <view class="container">
+    <view class="welcome">
+      <text > 欢迎使用纬湃汽车食堂就餐系统</text>
+    </view>
+    
+      <view class="usermotto">
+        <text class="user-motto">剩余就餐位置:{{motto}}</text>
+      </view>
+
+      <view class="userbuttonCollection">
+          <view class="userinfo">
+            <van-button plain type="info" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录</van-button>
+          </view>
+      </view>
+  </view>
+</view>

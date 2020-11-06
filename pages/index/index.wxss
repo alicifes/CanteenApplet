@@ -1,0 +1,60 @@
+.head {
+  margin-top: 20rpx;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content:space-between;
+  flex-direction: column;
+  font-size: 50rpx;
+  position: absolute;
+  z-index: 1;
+  left: 60rpx;
+  color: yellow;
+}
+.bgc {
+width: 100%;
+height: 400rpx;
+/* background-color:pink;   */
+}
+.bgcpic {
+  width: 100%;
+  height: 400rpx;
+}
+.logo {
+width: 250rpx;
+height: 250rpx;
+border-radius: 50%;
+background-color: yellow;
+position: relative;
+z-index: 1;
+top: -125rpx;
+left: 255rpx;
+border: solid 2rpx black;
+}
+
+
+.welcome {
+  font-size: 50rpx;
+  text-align: center;
+}
+
+.usermotto {
+  font-size: 60rpx;
+  margin-top: 50rpx;
+}
+
+
+.userbuttonCollection {
+  width: auto;
+}
+
+.userinfo {
+  margin-top: 140rpx;
+}
+
+button {
+  color:#fff;
+  background-color:#1E90FF;
+  width: 600rpx;  
+  z-index: 2;
+}      
