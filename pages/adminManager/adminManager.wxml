@@ -1,0 +1,133 @@
+<!--pages/main/main.wxml-->
+<view class="html">
+  <van-notice-bar scrollable="{{ true }}" text="欢迎使用纬湃汽车食堂管理系统,以下是今日的全部菜品,点击图像可查看菜品的大图" />
+  <van-divider contentPosition="center" customStyle="color: #ED6A0C; border-color: #ED6A0C; font-size: 18px;">
+        全部菜品
+  </van-divider>
+    <!-- 从后台循环取出菜品部分 -->
+    <view wx:for="{{originalNumber}}" data-index="{{index}}" wx:key="id">
+      <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onEdit" data-index="{{item._id}}">
+      <view slot="left">编辑</view>
+      <!-- 循环的卡片部分 -->
+        <van-card  tag="hot" price="{{item.price}}"  title="{{item.vegName}}"  desc="{{item.vegName}}" thumb="{{item.picrout}}">
+          <view slot="footer">
+            <van-switch checked="{{ item.used}}" bind:change="onChangeButton"  size ="40rpx" data-index="{{item._id}}"/>
+          </view>
+        </van-card>
+      <view slot="right" >删除</view>
+    </van-swipe-cell>   
+  </view>
+  <!-- 底部按钮部分 -->
+  <view class="buttonPart">
+    <view class="buttonAdd">
+      <van-button plain type="info" bindtap="addMenu">添加菜品</van-button>
+    </view>
+    <view class="buttonNav">
+      <van-button plain type="primary" bindtap="lookMenu">查看菜单</van-button>
+    </view>
+    <view class="buttonDelet">
+      <van-button plain type="danger" bindtap="exit">退出系统</van-button>
+      <van-dialog id="van-dialog" bind:confirm="nav"/>
+    </view>
+  </view>
+  <!-- 弹出层 1-->
+  <van-popup show="{{ show }}" bind:close="onCloseAddMenu" round= 'true' closeable = 'true' >
+    <view class="modifyMenu">
+    <!-- 头部文件 -->
+    <view class="addMenuHead">
+      <van-divider contentPosition="center" customStyle="color: #ED6A0C; border-color: #ED6A0C; font-size: 18px;">
+        添加菜品
+      </van-divider>
+    </view>
+      <!-- 菜品名 -->
+      <view class="addMenuList"> 
+          <van-field model:value="{{vegName }}" label = '菜品名' placeholder="请输入菜品名" required="true"  error-message="{{error1}}"/>
+      </view>
+      <!-- 价格 -->
+      <view class="addMenuList2"> 
+        <van-field model:value="{{ price }}" label = '价格' placeholder="请输入价格" required="true"  maxlength = '3'   error-message="{{error2}}" />
+      </view>
+      <!-- 荤素 -->
+      <view class="addMenuList1"> 
+        <van-radio-group value="{{ radio }}" bind:change="onChange" >
+          <van-cell-group title="请选择荤素">
+            <van-cell title="荤菜" clickable data-name="1" bind:click="onClick">
+              <van-radio slot="right-icon" name="1" />
+             </van-cell>
+            <van-cell title="素菜" clickable data-name="2" bind:click="onClick">
+              <van-radio slot="right-icon" name="2" />
+            </van-cell>
+          </van-cell-group>
+        </van-radio-group>
+      </view>
+
+      <!-- 预览图 -->
+      <view class="addMenuList2">   
+      </view>
+      <!-- 上传图片 -->
+      <view class="addMenuListUp"> 
+          <!-- <van-button icon="photo" plain type="primary" bindtap="upload_picture">上传图片</van-button> -->
+          <view class="update" bindtap="uploadFile" style="width:100rpx; height: 250rpx" bindtap="upload_picture"> 
+            <view class="uploadImg">
+                <image  src="../image/upload.png"   style="width:200rpx; height: 200rpx"/>
+            </view> 
+            <view class="readImg">
+              <image  src="{{ onRead }}" style="width:200rpx; height: 200rpx" />
+            </view>
+          </view>
+      </view>
+      
+      <!-- 确认按钮 -->
+      <view class="addButtonAlert">
+        <van-button plain type="info" bindtap="addMenuList" >确认添加</van-button>
+      </view>
+      <!-- 取消按钮 -->
+      <view class="addButtonAlertLow">
+        <van-button plain type="danger" bindtap="addCancel">取消添加</van-button>
+      </view>
+    </view>
+  </van-popup>
+
+
+   <!-- 弹出层 2-->
+   <van-popup show="{{ showEdit }}" bind:close="onCloseEditMenu" round= 'true' closeable = 'true' >
+    <view class="modifyMenu">
+    <!-- 头部文件 -->
+    <view class="addMenuHead">
+      <van-divider contentPosition="center" customStyle="color: #ED6A0C; border-color: #ED6A0C; font-size: 18px;">
+        修改菜品
+      </van-divider>
+    </view>
+      <!-- 菜品名 -->
+      <view class="addMenuList"> 
+          <van-field model:value="{{editVegName}}" label = '菜品名' placeholder="请输入菜品名" required="true"  error-message="{{error11}}"/>
+      </view>
+      <!-- 价格 -->
+      <view class="addMenuList2"> 
+        <van-field model:value="{{editVegPrice}}" label = '价格' placeholder="请输入价格" required="true"  maxlength = '3'   error-message="{{error22}}" />
+      </view>
+      <!-- 荤素 -->
+      <view class="addMenuList1"> 
+        <van-radio-group value="{{ editRadio }}" bind:change="onChange" >
+          <van-cell-group title="请选择荤素">
+            <van-cell title="荤菜" clickable data-name="1" bind:click="onEditClick">
+              <van-radio slot="right-icon" name="1" />
+             </van-cell>
+            <van-cell title="素菜" clickable data-name="2" bind:click="onEditClick">
+              <van-radio slot="right-icon" name="2" />
+            </van-cell>
+          </van-cell-group>
+        </van-radio-group>
+      </view>
+
+      <!-- 确认按钮 -->
+      <view class="addButtonAlert">
+        <van-button plain type="info" bindtap="editMenuList" >确认修改</van-button>
+      </view>
+      <!-- 取消按钮 -->
+      <view class="addButtonAlertLow">
+        <van-button plain type="danger" bindtap="onCloseEditMenu">取消修改</van-button>
+      </view>
+    </view>
+  </van-popup>
+</view>

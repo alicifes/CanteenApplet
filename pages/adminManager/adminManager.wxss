@@ -1,0 +1,88 @@
+/* pages/adminManager/adminManager.wxss */
+
+.van-swipe-cell__left{
+  display: inline-block;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #07C160;
+}
+
+.van-swipe-cell__right {
+  display: inline-block;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+}
+
+.buttonPart {
+  text-align: center;
+  margin-top: 30rpx;
+}
+.buttonNav {
+  text-align: center;
+  margin-top: 30rpx;
+}
+.buttonDelet{
+  margin-top: 30rpx;
+  margin-bottom: 50rpx;
+}
+button {
+  width: 500rpx;
+}
+.modifyMenu {
+  width: 600rpx;
+  height: 1200rpx;
+  background-color: #F0F3F6;
+}
+.addMenuHead {
+  padding-top: 50rpx;
+}
+.addMenuList {
+    text-align: center;
+    padding-top: 30rpx;
+}
+.addMenuList1 {
+  margin-top: 50rpx;
+}
+.addMenuList2 {
+  text-align: center;
+  margin-top: 50rpx;
+}
+
+.addMenuListUpload {
+  height: 250rpx;
+  width: flex;
+  margin-left: 30rpx;
+  margin-top: 100rpx;
+}
+.update {
+  display:flex;
+  flex-direction:row;
+}
+
+.uploadImg {
+  float: left;
+  margin-left: 100rpx;
+}
+
+.readImg {
+  float: left;
+}
+
+.addButtonAlert {
+  text-align: center;
+  margin-top: 20rpx;
+}
+.addButtonAlertLow {
+  text-align: center;
+  margin-top: 20rpx;
+  margin-bottom: 50rpx;
+}

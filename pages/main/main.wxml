@@ -2,11 +2,13 @@
 
 <view class="html">
   <van-notice-bar scrollable="{{ true }}" text="欢迎来到纬湃汽车食堂,以下是今日的全部菜品,点击图像可查看菜品的大图" />
+  <van-divider contentPosition="center" customStyle="color: #ED6A0C; border-color: #ED6A0C; font-size: 18px;">
+        全部菜品
+        </van-divider>
     <view class="container">
       <view class="menu">
-        <view wx:for="{{originalNumber}}"  data-index="{{index}}" wx:key="id">
-
-          <view class="border">
+        <view wx:for="{{originalNumber}}"  wx:for-index="i" wx:key="id">
+          <view class="border" wx:if="{{item.used == true}}">
            <view class="pic">
              <image class="menuDisplay"  mode="scaleToFill" id="{{item.vegName}}" bindtap="showpic" src="{{item.picrout}}">
              </image>
@@ -23,6 +25,9 @@
               </van-dialog>
             </view>
             <view class="vegName">{{item.vegName}}</view> 
+            <view class="vegprice">
+              <van-tag  plain type="danger">￥{{item.price}}</van-tag>
+            </view>
           </view>
         </view>
       </view>

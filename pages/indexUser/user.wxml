@@ -25,7 +25,7 @@
 </view>
 
   <view class="userbuttonCollection">
-    <van-button plain  type="info" style="width:400rpx" bindtap="bindButtonTap" class="userbutton"> 点击进入点餐界面</van-button>
+    <van-button plain  type="info" style="width:400rpx" bindtap="bindButtonTap" class="userbutton"> 点击查看当天菜单</van-button>
   </view>
   <view class="userbuttonCollectionDown">
   <van-button plain  type="primary" style="width:400rpx" bindtap="bindButtonTapBack" class="userbutton"> 返回首页</van-button>

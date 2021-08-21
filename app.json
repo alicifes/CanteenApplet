@@ -7,7 +7,10 @@
     "pages/main/mainRice",
     "pages/main/mainVeg",
     "pages/main/test",
-    "pages/test/logs"
+    "pages/test/logs",
+    "pages/admin/admin",
+    "pages/adminManager/adminManager",
+    "pages/adminForesee/adminForesee"
   ],
   "tabBar": {
     "list": [
@@ -41,6 +44,15 @@
     "van-nav-bar": "@vant/weapp/nav-bar/index",
     "van-button": "@vant/weapp/button/index",
     "van-dialog": "@vant/weapp/dialog/index",
-    "van-notice-bar": "@vant/weapp/notice-bar/index"
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-switch": "@vant/weapp/switch/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-cell": "@vant/weapp/cell/index",
+  "van-cell-group": "@vant/weapp/cell-group/index",
+  "van-uploader": "@vant/weapp/uploader/index"
   }
   }

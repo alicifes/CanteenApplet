@@ -1,5 +1,6 @@
 {
   "description": "项目配置文件",
+  "cloudfunctionRoot": "cloud/",
   "packOptions": {
     "ignore": []
   },
@@ -28,18 +29,17 @@
       "disablePlugins": [],
       "outputPath": ""
     },
+    "bundle": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "useExtendedLib": {
-      "kbone": true,
-      "weui": true
-    }
+    "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.0.4",
+  "libVersion": "2.14.0",
   "appid": "wx0884cf9235b8df84",
   "projectname": "demo1",
   "debugOptions": {
@@ -50,12 +50,6 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
     "plugin": {
       "list": []
     },
@@ -66,7 +60,6 @@
       "list": []
     },
     "miniprogram": {
-      "current": -1,
       "list": [
         {
           "id": -1,
@@ -80,6 +73,38 @@
           "name": "test",
           "pathName": "pages/main/test",
           "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "dbtest",
+          "pathName": "pages/admin/admin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "admin界面",
+          "pathName": "pages/admin/admin",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "menu",
+          "pathName": "pages/adminManager/adminManager",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "mian",
+          "pathName": "pages/main/main",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "管理员查看",
+          "pathName": "pages/adminForesee/adminForesee",
           "scene": null
         }
       ]

@@ -10,9 +10,6 @@
   text-align: center;
 }
 
-.container {
-  margin-top: 100rpx;
-}
 
 .menu {
 display:flex;
@@ -21,7 +18,7 @@ flex-direction:row;
 }
 
 .border {
-  height: 300rpx;
+  height: 330rpx;
   width: 200rpx;
   margin-left: 37rpx;
   margin-bottom: 20rpx;
@@ -35,6 +32,7 @@ flex-direction:row;
   width: 170rpx;
   margin-top: 15rpx;
   margin-left: 15rpx;
+  border:0.7rpx solid black
 }
 
 .vegName {
@@ -42,6 +40,11 @@ flex-direction:row;
   text-align: center;
   font-size: small;
 }
+.vegprice {
+  text-align: center;
+  font-size: small;
+} 
+
 .buttonContainer{
  margin-top: 50rpx;
 }

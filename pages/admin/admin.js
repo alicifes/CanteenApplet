@@ -94,6 +94,10 @@ Page({
     wx.navigateTo({
       url: '/pages/index/index',
     })
+  },
+  bindButtonTapManager:function(){
+    wx.navigateTo({
+      url: '/pages/adminManager/adminManager',
+    })
   }
-  
 })

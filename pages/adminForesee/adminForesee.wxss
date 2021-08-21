@@ -48,6 +48,9 @@ flex-direction:row;
 .buttonContainer{
  margin-top: 50rpx;
 }
+.backAdmin {
+  margin-bottom: 30rpx;
+}
 .buttonContainer1{
   margin-top: 30rpx;
   margin-bottom: 100rpx;

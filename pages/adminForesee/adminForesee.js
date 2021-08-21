@@ -151,5 +151,11 @@ Page({
       url: '/pages/index/index',
     });
     Dialog.close()
+  },
+  backAdmin(){
+    wx.reLaunch({
+      url: '/pages/adminManager/adminManager',
+    });
   }
+
 })

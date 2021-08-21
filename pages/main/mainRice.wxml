@@ -1,10 +1,13 @@
 <!--pages/main/mainRice.wxml-->
 <view class="html">
   <van-notice-bar scrollable="{{ true }}" text="欢迎来到纬湃汽车食堂,以下是今日的荤菜,点击图像可查看菜品的大图" />
+  <van-divider contentPosition="center" customStyle="color: #ED6A0C; border-color: #ED6A0C; font-size: 18px;">
+        全部荤菜
+        </van-divider>
     <view class="container">
       <view class="menu">
         <view wx:for="{{originalNumber}}"  data-index="{{index}}" wx:key="id">
-          <block wx:if="{{item.vegProperty == '1'}}"> 
+          <block wx:if="{{item.vegProperty == true&&item.used == true}}"> 
             <view class="border">
               <view class="pic">
                 <image class="menuDisplay"  mode="scaleToFill" id="{{item.vegName}}" bindtap="showpic" src="{{item.picrout}}">
@@ -22,7 +25,10 @@
                 </van-dialog>
               </view>
               <view class="vegName">{{item.vegName}}</view> 
-              </view>
+              <view class="vegprice">
+              <van-tag  plain type="danger">￥{{item.price}}</van-tag>
+            </view>
+          </view>
           </block>
         </view>
       </view>

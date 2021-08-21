@@ -2,6 +2,10 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
+    wx.cloud.init({
+      env:"weipai-4gwhduwe9552158c"
+    })
+
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)

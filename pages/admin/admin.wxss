@@ -1,0 +1,64 @@
+/* pages/indexUser/user.wxss */
+.head {
+  margin-top: 20rpx;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content:space-between;
+  flex-direction: column;
+  font-size: 40rpx;
+}
+
+.container {
+text-align: center;
+padding: 150rpx 0;
+}
+
+image{
+  height: 300rpx;
+  width: 300rpx;
+  border-radius: 50%;
+}
+.userMessage{
+font-size: 50rpx;
+}
+
+.userinfo{
+  margin-top: 10rpx;
+}
+
+.usermotto {
+ margin-top: 50rpx;
+}
+.moreDetail{
+  display:flex;
+  flex-wrap:nowrap;
+  flex-direction:row;
+  height: 250rpx;
+  width: flex;
+  margin-left: 30rpx;
+  margin-top: 100rpx;
+}
+.detal {
+  margin-right: 30rpx;
+  /* background-color:	#FF44AA; */
+  font-size:30rpx;
+  text-align: center;
+  padding-top: 70rpx;
+}
+
+.userbuttonCollection {
+  width: auto;
+  margin-top: 30rpx;
+}
+
+.userinfo {
+  margin-top: 200rpx;
+}
+
+button {
+  color:#fff;
+  background-color:#1E90FF;
+  width: 600rpx;  
+}   
+   

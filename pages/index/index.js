@@ -4,15 +4,16 @@ const app = getApp()
 
 Page({
   data: {
-    motto: '2000',
+    motto: '500',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    originalNumber:[
-      {detailumber:"当前就餐人数",detailNumber:80},{detailumber:"今日就餐人数",detailNumber:252},{detailumber:"累积就餐人数",detailNumber:1256}
-    ],
-    statusBarHeight: app.globalData.statusBarHeight
+    adminList:[],
+    openId:'',
+    statusBarHeight: app.globalData.statusBarHeight,
+    adminNumber:'0'
   },
+
   //事件处理函数
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -42,15 +43,68 @@ Page({
       })
     }
   },
+
+  //点击按钮事件
   getUserInfo: function(e) {
-    console.log(e)
+    var that = this
     app.globalData.userInfo = e.detail.userInfo
     if(e.detail.errMsg=='getUserInfo:ok'){
       console.log('登录成功')
       let userMessage = e.detail.rawData
-      wx.reLaunch({
-        url: `/pages/indexUser/user?detail=${userMessage}`
-      })
+      //获得用户id写入界面
+      wx.cloud.callFunction({
+        name:'getOpenId',
+        success(res){
+          console.log('获取id成功',res)
+          that.setData({
+            openId:res.result.openid
+          })
+          // if(res.result.openid == 'o2z46449eQoZ2PLkm5I0dIfaua8E'){
+          //   wx.reLaunch({
+          //     url: `/pages/admin/admin?detail=${userMessage}`
+          //   })
+          // }else{
+          //   wx.reLaunch({
+          //     url: `/pages/indexUser/user?detail=${userMessage}`
+          //   })
+          // }
+        },
+        fail(res){
+          console.log('获取id失败',res)
+        }
+      }),
+      // 调用数据库id写入页面
+      wx.cloud.callFunction({
+          name:"getUserId",
+        }).then(res=>{
+          that.setData({
+            adminList:res.result.data
+          })
+          // console.log(res)
+          // console.log(that.data.adminList)
+          var items = that.data.adminList
+          for(var index in items){
+            // console.log(that.data.openId)
+            // console.log(items[index].openId)
+          if(that.data.openId == items[index].openId){
+            that.setData({
+              adminNumber:1
+            }) 
+            // console.log(that.data.adminNumber)
+          }
+        }
+        if(that.data.adminNumber == '1'){
+          wx.reLaunch({
+                url: `/pages/admin/admin?detail=${userMessage}`
+              })
+          }else{
+              wx.reLaunch({
+                url: `/pages/indexUser/user?detail=${userMessage}`
+            })
+          }
+        }).catch(err=>{
+          console.error(err)
+        })  
     }else{
       console.log('登录失败')
     }
